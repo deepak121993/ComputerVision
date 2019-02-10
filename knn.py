@@ -39,4 +39,4 @@ model = KNeighborsClassifier(n_neighbors=args["neighbors"],n_jobs=args["jobs"])
 model.fit(x_train,y_train)
 
 
-print(classification_report(y_test,model.predict(x_test)),target_names=le.classes_)
+print(classification_report(y_test,model.predict(x_test),target_names=le.classes_))
