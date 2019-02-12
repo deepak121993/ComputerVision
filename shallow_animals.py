@@ -30,7 +30,7 @@ sdl = SimpleDatasetLoader(preprocessor=[sp,iap])
 data = data.astype("float32")/255.0
 
 # partition our data into training and test sets
-(trainX, testX, trainY, testY) = train_test_split(data, labels, test_size=0.25,
+(trainX, testX, trainY, testY) = train_test_split(data, label, test_size=0.25,
     random_state=42)
 
 # convert the labels from integers to vectors
