@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from pyImageSearch.preprocessing.imagetoarrayprocessor import ImageToArrayProcessor
 from pyImageSearch.preprocessing.simpleProcessor import SimplePreprocessor
-from pyImageSearch.datasets.simpleDatasetLoader import SimpleDatasetLoader
+from pyImageSearch.dataset.simpleDatasetLoader import SimpleDatasetLoader
 from pyImageSearch.nn.conv.shallownet import ShallowNet
 from keras.optimizers import SGD
 from imutils import paths
