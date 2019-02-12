@@ -7,13 +7,13 @@ from keras import backend as K
 
 class ShallowNet:
     @staticmethod
-    def build(widht,height,depth,classses):
+    def build(width,height,depth,classes):
 
         model = Sequential()
-        input_shape = (widht,height,depth)
+        input_shape = (width,height,depth)
 
         if K.image_data_format() =="channel_first":
-            input_shape=(depth,widht,height)
+            input_shape=(depth,width,height)
         
         model.add(Conv2D(32,(3,3),padding="same",input_shape=input_shape))
         model.add(Activation("relu"))
