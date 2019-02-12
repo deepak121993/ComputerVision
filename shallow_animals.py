@@ -21,7 +21,7 @@ print("[INFO] going to load images")
 image_path = list(paths.list_images(args["dataset"]))
 
 sp = SimplePreprocessor(32,32)
-iap = ImageToArrayPreprocessor()
+iap = ImageToArrayProcessor()
 
 
 sdl = SimpleDatasetLoader(preprocessor=[sp,iap])
