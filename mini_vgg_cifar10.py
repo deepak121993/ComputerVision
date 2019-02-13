@@ -33,6 +33,12 @@ labelNames = ["airplane", "automobile", "birds", "cat", "deer", "dog", "frog",
      "horse", "ship", "truck"]
 
 print("[INFO] compiling model")
+##decay is 0.01/40 per epoch 
+## Continous decay of lr
+
+##stepwise decay in learning rate ::
+#alpha = initAlpha*(factor ** np.floor((1+epochs)/dropEvery))
+
 
 opt = SGD(lr=0.01, decay=0.01/40, momentum=0.9, nesterov=True)
 
@@ -54,3 +60,15 @@ predictions = model.predict(testX, batch_size=64)
 
 print(classification_report(testY.argmax(axis=1), predictions.argmax(axis=1),
     target_names=labelNames))
+
+plt.style.use("ggplot")
+plt.figure()
+plt.plot(np.arange(0, 40), H.history["loss"], label="train_loss")
+plt.plot(np.arange(0, 40), H.history["val_loss"], label="val_loss")
+plt.plot(np.arange(0, 40), H.history["acc"], label="train_acc")
+plt.plot(np.arange(0, 40), H.history["val_acc"], label="val_acc")
+plt.title("Training Loss and Accuracy on CIFAr-10")
+plt.xlabel("Epoch #")
+plt.ylabel("Loss/Accuracy")
+plt.legend()
+plt.savefig(args["output"])
