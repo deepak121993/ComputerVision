@@ -18,6 +18,12 @@ ap.add_argument("--m","--model",required=True)
 args = vars(ap.parse_args())
 
 
+print("[INFO] going to load images")
+image_path = list(paths.list_images(args["dataset"]))
+
+sp = SimplePreprocessor(32,32)
+iap = ImageToArrayProcessor()
+
 sdl = SimpleDatasetLoader(preprocessor=[sp,iap])
 (data,label) =sdl.load(image_path,verbose=500)
 
