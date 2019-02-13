@@ -30,7 +30,7 @@ trainY = lb.fit_transform(trainY)
 testY = lb.transform(testY)
 
 labelNames = ["airplane", "automobile", "birds", "cat", "deer", "dog", "frog",
-    "frog", "horse", "ship", "truck"]
+     "horse", "ship", "truck"]
 
 print("[INFO] compiling model")
 
@@ -45,7 +45,7 @@ model.compile(loss="categorical_crossentropy", optimizer=opt,
 print("[INFO] training the network...")
 
 H = model.fit(trainX, trainY, validation_data=(testX, testY), batch_size=64,
-    epochs=40, verbose=1)
+    epochs=20, verbose=1)
 
 print("[INFO] evaluating network...")
 
