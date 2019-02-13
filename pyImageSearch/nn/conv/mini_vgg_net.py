@@ -3,6 +3,7 @@ from keras.layers.core import Activation,Flatten,Dense
 from keras.layers import MaxPooling2D
 from keras.layers.normalization import BatchNormalization
 from keras.models import Sequential
+from keras import backend as K 
 
 
 class MiniVGGNet:
