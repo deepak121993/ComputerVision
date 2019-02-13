@@ -20,7 +20,7 @@ args = vars(ap.parse_args())
 classLabels = ["cat","dog","panda"]
 
 print("going to load images")
-imagePaths = np.array(list(paths.list_images(arg["dataset"])))
+imagePaths = np.array(list(paths.list_images(args["dataset"])))
 idx = np.random.randint(0,len(imagePaths),size=(10,))
 imagesPaths = imagePaths[idx]
 
@@ -32,7 +32,7 @@ data = data.astype("float32")/255.0
 
 
 print("loading models ...")
-model = load_model(arg["model"])
+model = load_model(args["model"])
 
 print("predicting ")
 preds=model.predict(data,batch_size=32).argmax(axis=1)
