@@ -24,6 +24,10 @@ imagePaths = np.array(list(paths.list_images(args["dataset"])))
 idx = np.random.randint(0,len(imagePaths),size=(10,))
 imagesPaths = imagePaths[idx]
 
+
+sp = SimplePreprocessor(32,32)
+iap = ImageToArrayProcessor()
+
 sdl = SimpleDatasetLoader(preprocessor=[sp,iap])
 (data,label) =sdl.load(image_path,verbose=500)
 
