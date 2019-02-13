@@ -14,7 +14,7 @@ import argparse
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-d","--dataset",required=True)
-ap.add_argument("--m","--model",required=True)
+ap.add_argument("-m","--model",required=True)
 args = vars(ap.parse_args())
 
 
@@ -49,7 +49,7 @@ model.compile(loss="categorical_crossentropy", optimizer=opt,
 # train the network
 H = model.fit(trainX, trainY, validation_data=(testX, testY), batch_size=32,
     epochs=100, verbose=1)
-
+print("path to save " ,args["model"])
 model.save(args["model"])
 
 print("[INFO] evaluating network...")
