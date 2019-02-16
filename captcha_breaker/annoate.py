@@ -15,7 +15,7 @@ ap.add_argument("-a","--annot",required=True)
 args = vars(ap.parse_args())
 
 imagePaths = list(paths.list_images(args["input"]))
-counts{}
+counts={}
 
 
 for (i,imagePath) in enumerate(imagePaths):
@@ -38,7 +38,7 @@ for (i,imagePath) in enumerate(imagePaths):
         cnts = cnts[0] if imutils.is_cv2 else cnts[1]
         cnts = sorted(cnts,key=cv2.countoursArea,reverse=True)[:4]
 
-        print("countours aka outlines ::")
+        print("countours aka outlines ::",cnts)
 
         for c in cnts:
 
