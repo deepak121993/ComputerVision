@@ -3,7 +3,7 @@ matplotlib.use("Agg")
 
 from pyImageSearch.callbacks.trainingmonitor import TrainingMonitor
 from sklearn.preprocessing import LabelBinarizer
-from pyImageSearch.nn.conv.minivggnet import MiniVGGNet
+from pyImageSearch.nn.conv.mini_vgg_net import MiniVGGNet
 from keras.optimizers import SGD
 from keras.datasets import cifar10
 import argparse
