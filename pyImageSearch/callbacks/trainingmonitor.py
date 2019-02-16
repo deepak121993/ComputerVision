@@ -43,9 +43,10 @@ class TrainingMonitor(BaseLogger):
             self.H[k] =l
 
         if self.jsonPath is not None:
-            f = open(self.jsonPath,"w")
-            f.write(json.dumps(self.H))
-            f.close()
+            if os.path.exists(self.jsonPath):
+                f = open(self.jsonPath,"w")
+                f.write(json.dumps(self.H))
+                f.close()
 
 
         if len(self.H["loss"]) > 1:
