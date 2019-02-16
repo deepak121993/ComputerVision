@@ -42,7 +42,7 @@ class TrainingMonitor(BaseLogger):
             l.append(v)
             self.H[k] =l
 
-        if self.H.jsonPath is not None:
+        if self.jsonPath is not None:
             f = open(self.jsonPath,"w")
             f.write(json.dumps(self.H))
             f.close()
