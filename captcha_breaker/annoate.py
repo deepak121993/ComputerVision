@@ -38,7 +38,7 @@ for (i,imagePath) in enumerate(imagePaths):
         cnts = cnts[0] if imutils.is_cv2() else cnts[1]
         cnts = sorted(cnts,key=cv2.contourArea,reverse=True)[:4]
 
-        print("countours aka outlines ::",cnts)
+        #print("countours aka outlines ::")
 
         for c in cnts:
 
