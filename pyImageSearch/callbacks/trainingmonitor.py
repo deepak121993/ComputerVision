@@ -38,7 +38,7 @@ class TrainingMonitor(BaseLogger):
 
 
         for (k,v) in logs.items():
-            l = self.h.get(k,[])
+            l = self.H.get(k,[])
             l.append(v)
             self.H[k] =l
 
