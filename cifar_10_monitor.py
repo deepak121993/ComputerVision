@@ -42,8 +42,8 @@ model.compile(loss="categorical_crossentropy", optimizer=opt,
 
 ##construct the set of callbacks
 
-figPath = os.path.sep.join([args["output"],"curves.png")])
-jsonPath = os.path.sep.join([args["output"],"curves.json")])
+figPath = os.path.sep.join([args["output"],"curves.png"])
+jsonPath = os.path.sep.join([args["output"],"curves.json"])
 callbacks=[TrainingMonitor(figPath,jsonPath=jsonPath)]
 print("[INFO] training the network...")
 
