@@ -14,7 +14,7 @@ import cv2
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-d","--dataset",required=True)
-ap.add_argument("--m","--model",required=True)
+ap.add_argument("-m","--model",required=True)
 args = vars(ap.parse_args())
 
 classLabels = ["cat","dog","panda"]
