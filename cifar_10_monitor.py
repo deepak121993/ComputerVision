@@ -11,7 +11,7 @@ import os
 
 
 
-ap = ArgumentParser()
+ap = argparse.ArgumentParser()
 ap.add_argument("-o","--output",required=True)
 args = vars(ap.parse_args())
 
