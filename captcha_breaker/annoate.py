@@ -36,7 +36,7 @@ for (i,imagePath) in enumerate(imagePaths):
 
         cnts = cv2.findContours(thresh.copy(),cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
         cnts = cnts[0] if imutils.is_cv2 else cnts[1]
-        cnts = sorted(cnts,key=cv2.countoursArea,reverse=True)[:4]
+        cnts = sorted(cnts,key=cv2.contourArea,reverse=True)[:4]
 
         print("countours aka outlines ::",cnts)
 
@@ -63,11 +63,12 @@ for (i,imagePath) in enumerate(imagePaths):
             cv2.imwrite(p,roi)
 
             ##increment the count of current key in captcha
-
+            count[key] = count+1
     except KeyboardInterrupt:
         print("[ERROR] manually leaving script")
         break
-
+    except :
+        print("[INFO] skipping image")
 
 
 
