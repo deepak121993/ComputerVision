@@ -36,9 +36,10 @@ for (i,imagePath) in enumerate(imagePaths):
 
         cnts = cv2.findContours(thresh.copy(),cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
         cnts = cnts[0] if imutils.is_cv2() else cnts[1]
-        cnts = sorted(cnts,key=cv2.contourArea,reverse=True)[:4]
-
-        #print("countours aka outlines ::")
+        #print("countours aka outlines 1::",cnts)
+        print("1" ,cnts)
+        cnts = sorted(cnts,key=lambda x: cv2.contourArea(x),reverse=True)[:4]
+        print("2" ,cnts)
 
         for c in cnts:
 
@@ -67,7 +68,7 @@ for (i,imagePath) in enumerate(imagePaths):
     except KeyboardInterrupt:
         print("[ERROR] manually leaving script")
         break
-    except Excetion as e:
+    except Exception as e:
         print("[INFO] skipping image due to ",e)
 
 
