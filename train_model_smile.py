@@ -37,7 +37,7 @@ for imagePath in sorted(list(paths.list_images(args["dataset"]))):
     ##extract the class label 
 
     label = imagePath.split(os.path.sep)[-3]
-    label ="smiling" if label=="positive" else "not smiling"
+    label ="smiling" if label=="positives" else "not smiling"
     labels.append(label)
 
 
