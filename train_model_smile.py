@@ -23,7 +23,7 @@ args = vars(ap.parse_args())
 data=[]
 labels=[]
 
-
+print("going inside the loop ")
 ## for loop over input images
 for imagePath in sorted(list(paths.list_images(args["dataset"]))):
     #load the images ::
