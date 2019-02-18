@@ -24,6 +24,7 @@ data=[]
 labels=[]
 
 print("going inside the loop ")
+print("length " ,len(list(paths.list_images(args["dataset"]))))
 ## for loop over input images
 for imagePath in sorted(list(paths.list_images(args["dataset"]))):
     #load the images ::
