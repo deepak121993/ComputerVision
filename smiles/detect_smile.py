@@ -25,7 +25,7 @@ model = load_model(args["model"])
 
 
 if not args.get("video",False):
-    camera = cv2.VideoCapture(-1)
+    camera = cv2.VideoCapture(0)
 
 else:
     camera = cv2.VideoCapture(args["video"])
