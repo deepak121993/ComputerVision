@@ -32,7 +32,7 @@ else:
 while True:
 
     #grab the current frame :
-    (gabbed,frame) = camera.read()
+    (grabbed,frame) = camera.read()
     if args.get("video") and not grabbed:
         break
     
