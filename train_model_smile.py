@@ -30,7 +30,7 @@ for imagePath in sorted(list(paths.list_images(args["dataset"]))):
     #load the images ::
     image = cv2.imread(imagePath)
     image = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
-    image = imutils.resize(image,widht=28)
+    image = imutils.resize(image,width=28)
     image = img_to_array(image)
     data.append(image)
 
