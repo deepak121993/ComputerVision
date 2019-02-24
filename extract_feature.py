@@ -54,7 +54,7 @@ pbar = progressbar.ProgressBar(maxval=len(imagePaths),widgets=widgets).start()
 
 ##loop over images in patches ::
 
-for i in np.arrange(0,len(imagePaths),bs):
+for i in np.arange(0,len(imagePaths),bs):
 
     #extract the images and labels in batches
     ##then pass through the actual images frm the network and store the features 
