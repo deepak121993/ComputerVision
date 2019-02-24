@@ -37,7 +37,7 @@ iap = ImageToArrayProcessor()
 
 sdl = SimpleDatasetLoader(preprocessor=[iap])
 (data,label) = sdl.load(imagePaths,verbose=500)
-data = data.astype("float")/255.0
+data = data.astype("float32")/255.0
 
 
 
