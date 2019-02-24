@@ -33,7 +33,7 @@ random.shuffle(imagePaths)
 ##extract the class label from the image path 
 
 labels = [p.split(os.path.sep)[-2] for p in imagePaths]
-for path in imagePath:
+for path in imagePaths:
     print("path" ,path)
 le = LabelEncoder()
 labels = le.fit_transform(labels)
