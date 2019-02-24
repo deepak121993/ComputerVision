@@ -87,4 +87,4 @@ for i in np.arange(0,len(imagePaths),bs):
 
 
 dataset.close()
-pbar.close()
+pbar.finish()
