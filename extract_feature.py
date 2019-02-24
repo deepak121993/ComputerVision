@@ -46,7 +46,7 @@ dataset = HDF5DatasetWriter((len(imagePaths),512*7*7),args["output"],dataKey="fe
                                     bufSize=args["buffer_size"])
 
 print("classees " ,le.classes_)
-#dataset.storeClassLabels(le.classes_)
+dataset.storeClassLabels(le.classes_)
 
 ##initializes the progress bar :
 widgets = ["Extracting Features:" , progressbar.Percentage(),"  ",progressbar.Bar(),"  ",progressbar.ETA()]
