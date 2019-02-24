@@ -34,7 +34,7 @@ random.shuffle(imagePaths)
 
 labels = [p.split(os.path.sep)[-2] for p in imagePaths]
 for path in imagePaths:
-    print("path" ,path)
+    print("path" ,path.split(os.path.sep)[-2])
 le = LabelEncoder()
 labels = le.fit_transform(labels)
 print("labesls  " , labels)
@@ -45,6 +45,7 @@ model = VGG16(weights="imagenet",include_top=False)
 dataset = HDF5DatasetWriter((len(imagePaths),512*7*7),args["output"],dataKey="features",\
                                     bufSize=args["buffer_size"])
 
+print("classees " ,le.classes_)
 dataset.storeClassLabels(le.classes_)
 
 ##initializes the progress bar :
