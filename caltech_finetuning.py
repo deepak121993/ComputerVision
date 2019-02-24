@@ -31,11 +31,11 @@ classNames = [str(x) for x in np.unique(classNames)]
 print("len of images " , len(imagePaths))
 print("class names ",classNames)
 ##initialize the preprocessing steps ::
-
+sp = SimplePreprocessor(224,224)
 aap = AspectAwarePreprocessor(224,224)
 iap = ImageToArrayProcessor()
 
-sdl = SimpleDatasetLoader(preprocessor=[iap])
+sdl = SimpleDatasetLoader(preprocessor=[sp,iap])
 (data,label) = sdl.load(imagePaths,verbose=500)
 print("shape ",data.shape )
 data = data.astype("float32") / 255.0
