@@ -83,7 +83,7 @@ opt = SGD(lr=0.001)
 model.compile(loss="categorical_crossentropy",optimizer=opt,metrics=["accuracy"])
 
 print("[INFO] fine tunining model ...")
-model.fit_generator(aug.flow(trainX,trainY,batch_size=32),validation_data=(testX,testY),epochs=10\
+model.fit_generator(aug.flow(trainX,trainY,batch_size=32),validation_data=(testX,testY),epochs=10,\
 steps_per_epoch=len(trainX)//32,verbose=1)
 
 print("[INFO] evaluating after fine-tuning..")
