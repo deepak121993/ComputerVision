@@ -4,6 +4,7 @@ from sklearn.metrics import classification_report
 from pyImageSearch.preprocessing.imagetoarrayprocessor import ImageToArrayProcessor
 from pyImageSearch.preprocessing.aspectawarepreprocess import AspectAwarePreprocessor
 from pyImageSearch.dataset.simpleDatasetLoader import SimpleDatasetLoader
+from pyImageSearch.preprocessing.simpleProcessor import SimplePreprocessor
 from pyImageSearch.nn.conv.fcheadnet import FCHeadNet
 from keras.preprocessing.image import ImageDataGenerator
 from keras.optimizers import RMSprop,SGD
