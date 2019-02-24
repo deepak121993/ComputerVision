@@ -67,7 +67,7 @@ model.compile(loss="categorical_crossentropy",optimizer=opt,metrics=["accuracy"]
 
 print("[INFO] training head ...")
 
-model.fit_generator(aug.flow(trainX,trainY,batch_size=32),validation_data=(testX,testY)\
+model.fit_generator(aug.flow(trainX,trainY,batch_size=32),validation_data=(testX,testY) ,epochs=25,\
 steps_per_epoch=len(trainX)//32,verbose=1)
 
 print("[INFO] evaluating after initilization..")
