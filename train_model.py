@@ -16,7 +16,7 @@ i= int(db['labels'].shape[0]*0.75)
 
 print("[INFO] tuning hyperparameters")
 params ={"C":[0.1,1.0,10.0,100.0]}
-model= GridSearchCV(LogisticRegression(),params,cv=1,n_jobs=args["jobs"])
+model= GridSearchCV(LogisticRegression(),params,cv=2,n_jobs=args["jobs"])
 model.fit(db["features"][:i],db["labels"][:i])
 
 print("[INFO] best hyperparameter: {}".format(model.best_params_))
