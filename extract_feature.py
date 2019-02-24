@@ -24,7 +24,7 @@ ap.add_argument("-s", "--buffer_size",type=int,default=1000,
     help="size of buffer size")
 args = vars(ap.parse_args())
 
-bs = args["batch-size"]
+bs = args["batch_size"]
 
 print("[INFO] loading Images")
 imagePaths =  list(paths.list_images(args["dataset"]))
