@@ -28,7 +28,8 @@ print("[INFO] loading images")
 imagePaths = list(paths.list_images(args["dataset"]))
 classNames = [pt.split(os.path.sep)[-2] for pt in imagePaths]
 classNames = [str(x) for x in np.unique(classNames)]
-
+print("len of images " , len(imagePaths))
+print("class names ",classNames)
 ##initialize the preprocessing steps ::
 
 aap = AspectAwarePreprocessor(224,224)
