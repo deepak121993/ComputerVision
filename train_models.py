@@ -12,6 +12,8 @@ from keras.optimizers import RMSprop,SGD
 from keras.datasets import cifar10
 import argparse
 import os
+import numpy as np
+
 
 ap =  argparse.ArgumentParser()
 ap.add_argument("-o", "--output", required=True,
@@ -54,7 +56,7 @@ for i in np.arange(0,args["num_models"]):
     validation_data=(testX,testY),steps_per_epoch=len(trainX)//64,verbose=1)
 
     print("[INFO] models saving to disk")
-    
+
     p=[args["models"],"model_{}.model".format(i)] 
     model.save(os.path.sep.join(p))
 
