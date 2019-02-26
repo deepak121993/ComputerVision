@@ -52,7 +52,7 @@ for i in np.arange(0,args["num_models"]):
     model.compile(loss="categorical_crossentropy", optimizer=opt,
     metrics=["accuracy"])
 
-    h = model.fit_generator(aug.flow(trainX,trainY,batch_size=64),epochs=10,\
+    H = model.fit_generator(aug.flow(trainX,trainY,batch_size=64),epochs=10,\
     validation_data=(testX,testY),steps_per_epoch=len(trainX)//64,verbose=1)
 
     print("[INFO] models saving to disk")
