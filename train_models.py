@@ -36,7 +36,7 @@ testY = lb.transform(testY)
 labelNames = ["airplane", "automobile", "birds", "cat", "deer", "dog", "frog",
      "horse", "ship", "truck"]
 
-aug = ImageDataGenerator(rotation_image=30,width_shift_range=0.1,height_shift_range=0.1,\
+aug = ImageDataGenerator(rotation_range=30,width_shift_range=0.1,height_shift_range=0.1,\
             horizontal_flip=True,fill_mode="nearest")
 
 #loop over num of models to train::
@@ -53,6 +53,8 @@ for i in np.arange(0,args["num_models"]):
     h = model.fit_generator(aug.flow(trainX,trainY,batch_size=64),epochs=10,\
     validation_data=(testX,testY),steps_per_epoch=len(trainX)//64,verbose=1)
 
+    print("[INFO] models saving to disk")
+    
     p=[args["models"],"model_{}.model".format(i)] 
     model.save(os.path.sep.join(p))
 
