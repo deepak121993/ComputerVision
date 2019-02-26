@@ -45,7 +45,7 @@ aug = ImageDataGenerator(rotation_range=30,width_shift_range=0.1,height_shift_ra
 
 for i in np.arange(0,args["num_models"]):
 
-    print("[INFO] training model {}/{}".format(i+1,args["num-models"]))
+    print("[INFO] training model {}/{}".format(i+1,args["num_models"]))
     opt = SGD(lr=0.01, decay=0.01/40, momentum=0.9, nesterov=True)
 
     model = MiniVGGNet.build(width=32, height=32, depth=3, classes=10)
