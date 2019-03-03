@@ -11,7 +11,7 @@ import cv2
 import os
 
 trainPaths = list(paths.list_images(config.IMAGES_PATH))
-print("paths " ,trainPaths[0])
+print("paths " ,trainPaths," config ",config.IMAGES_PATH)
 trainLabels = [p.split(os.sep.path)[2].split(".")[0] for p in trainPaths]
 le = LabelEncoder()
 trainLabels =le.fit_transform(trainLabels)
