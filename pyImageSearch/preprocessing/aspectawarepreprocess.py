@@ -20,6 +20,7 @@ class AspectAwarePreprocessor:
         else:
             image = imutils.resize(image,height=self.height,inter=self.inter)
             dW = int((image.shape[1]-self.width)/2.0)
+        (h,w) = image.shape[:2]
         image = image[dH:h-dH,dW:w-dW]
         
         return cv2.resize(image,(self.width,self.height),interpolation=self.inter)
