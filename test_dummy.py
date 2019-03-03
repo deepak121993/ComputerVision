@@ -18,19 +18,19 @@ trainLabels =le.fit_transform(trainLabels)
 
 split = train_test_split(trainPaths, trainLabels, test_size=config.NUM_TEST_IMAGES,
     random_state=42,stratify=trainLabels)
-(trainPaths,testPaths,trainLabels,testlabels)=split
+trainPaths,testPaths,trainLabels,testLabels=split
 
 print("length of trainpaths 1",len(trainPaths))
 ##validation
 split = train_test_split(trainPaths, trainLabels, test_size=config.NUM_VAL_IMAGES,
     random_state=42,stratify=trainLabels)
-(trainPaths,valPaths,trainLabels,vallabels)=split
+trainPaths,valPaths,trainLabels,valLabels=split
 
 print("length of trainpaths 2",len(trainPaths))
 
 dataset = [("train",trainPaths,trainLabels,config.TRAIN_HDF5),
 ("test",testPaths,testLabels,config.TEST_HDF5),
-("val",valPaths,vallabels,config.VAL_HDF5)
+("val",valPaths,valLabels,config.VAL_HDF5)
 ]
 
 aap = AspectAwarePreprocessor(256,256)
