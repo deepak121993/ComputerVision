@@ -1,4 +1,4 @@
-from config import dog_vs_cat_config as config
+from dog_vs_cat.config import dog_vs_cat_config as config
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from pyImageSearch.preprocessing.aspectawarepreprocess import AspectAwarePreprocessor
