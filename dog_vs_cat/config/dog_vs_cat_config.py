@@ -1,5 +1,5 @@
 
-IMAGES_PATH = "../dataset/kaggle_dog_vs_cat/train"
+IMAGES_PATH = "dataset/kaggle_dog_vs_cat/train"
 NUM_CLASSES= 2
 NUM_VAL_IMAGES= 300*NUM_CLASSES
 NUM_TEST_IMAGES = 300*NUM_CLASSES
