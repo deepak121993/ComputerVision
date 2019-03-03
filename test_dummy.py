@@ -11,20 +11,20 @@ import cv2
 import os
 
 trainPaths = list(paths.list_images(config.IMAGES_PATH))
-print("paths " ,trainPaths , " config ",config.IMAGES_PATH)
-trainLabels = [p.split(os.sep.path)[2].split(".")[0] for p in trainPaths]
+#print("paths " ,trainPaths , " config ",config.IMAGES_PATH)
+trainLabels = [p.split(os.path.sep)[2].split(".")[0] for p in trainPaths]
 le = LabelEncoder()
 trainLabels =le.fit_transform(trainLabels)
 
 split = train_test_split(trainPaths, trainLabels, test_size=config.NUM_TEST_IMAGES,
     random_state=42,stratify=trainLabels)
-trainPaths,testPaths,trainLabels,testlabels=split
+(trainPaths,testPaths,trainLabels,testlabels)=split
 
 print("length of trainpaths 1",len(trainPaths))
 ##validation
 split = train_test_split(trainPaths, trainLabels, test_size=config.NUM_VAL_IMAGES,
     random_state=42,stratify=trainLabels)
-trainPaths,valPaths,trainLabels,vallabels=split
+(trainPaths,valPaths,trainLabels,vallabels)=split
 
 print("length of trainpaths 2",len(trainPaths))
 
