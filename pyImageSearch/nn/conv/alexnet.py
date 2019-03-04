@@ -35,7 +35,7 @@ class AlexNet:
         model.add(Dropout(0.25))
 
         #second block
-        model.add(Conv2D(256,kernel_size=(5,5),,
+        model.add(Conv2D(256,kernel_size=(5,5),
         kernel_regularizer=l2(reg),padding="same"))
         model.add(Activation("relu"))
         model.add(BatchNormalization(axis=chanDim))
