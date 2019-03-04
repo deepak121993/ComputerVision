@@ -18,7 +18,7 @@ class HDF5DataGenerator:
         self.numImages = self.db["labels"].shape[0]
     
     def generator(self,passes=np.inf):
-        epochs=0
+        epoch=0
 
         while epoch<passes:
             for i in np.arrange(0,self.numImages,self.batchSize):
@@ -45,7 +45,7 @@ class HDF5DataGenerator:
                     (images,labels) = next(self.aug.flow(images,labels,batchSize=self.batchSize))
                 yield(images,labels)
             
-            epochs += 1
+            epoch += 1
     
     def close(self):
         self.db.close()
