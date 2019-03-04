@@ -67,9 +67,7 @@ class AlexNet:
         model.add(BatchNormalization())
         model.add(Dropout(0.25))
 
-        #fifth block
-
-        model.add(Flatten())
+        #fifth block)
         model.add(Dense(4096,kernel_regularizer=l2(reg)))
         model.add(Activation("relu"))
         model.add(BatchNormalization())
