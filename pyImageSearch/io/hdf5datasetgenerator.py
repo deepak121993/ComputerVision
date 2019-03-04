@@ -42,7 +42,7 @@ class HDF5DataGenerator:
                     images = np.array(imageProc)
                 ##not able to properly understand the meaninig for next and yield 
                 if self.aug is not None:
-                    (images,labels) = next(self.aug.flow(images,labels,batchSize=self.batchSize))
+                    (images,labels) = next(self.aug.flow(images,labels,batch_size=self.batchSize))
                 yield(images,labels)
             
             epoch += 1
