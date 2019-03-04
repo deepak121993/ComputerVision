@@ -40,7 +40,8 @@ path = os.path.sep.join([config.OUTPUT_PATH],"{}.png".format(os.getpid()))
 callbacks = [TrainingMonitor(path)]
 
 model.fit_generator(trainGen.generator(),steps_per_epoch= trainGen.numImages//128 ,
-validation_data = valGen.generator(),validation_steps=valGen.numImages//128,verbose=1,epochs=10,callbacks=callbacks)
+                    validation_data = valGen.generator(),validation_steps=valGen.numImages//128,
+                    verbose=1,epochs=10,callbacks=callbacks)
 
 model.save(config.MODEL_PATH,overwrite=True)
 
