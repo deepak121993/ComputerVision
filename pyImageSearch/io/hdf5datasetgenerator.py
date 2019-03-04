@@ -21,7 +21,7 @@ class HDF5DataGenerator:
         epoch=0
 
         while epoch<passes:
-            for i in np.arrange(0,self.numImages,self.batchSize):
+            for i in np.arange(0,self.numImages,self.batchSize):
                 images = self.db["images"][i:i+self.batchSize]
                 labels= self.db["labels"][i:i+self.batchSize]
 
