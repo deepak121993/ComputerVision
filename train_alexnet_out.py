@@ -7,7 +7,7 @@ from pyImageSearch.preprocessing.meanpreprocessor import MeanPreprocessor
 from pyImageSearch.preprocessing.patchpreprocessor import PatchPreporcessor
 from pyImageSearch.preprocessing.simpleProcessor import SimplePreprocessor
 from pyImageSearch.callbacks.trainingmonitor import TrainingMonitor
-from pyImageSearch.io.hdf5datagenerator import HDF5DataGenerator
+from pyImageSearch.io.hdf5datasetgenerator import HDF5DataGenerator
 from pyImageSearch.nn.conv.alexnet import AlexNet
 from dog_vs_cat.config import dog_vs_cat_config as config
 from keras.preprocessing.image import ImageDataGenerator

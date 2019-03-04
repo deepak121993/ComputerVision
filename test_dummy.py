@@ -17,7 +17,7 @@ le = LabelEncoder()
 trainLabels =le.fit_transform(trainLabels)
 
 split = train_test_split(trainPaths, trainLabels, test_size=config.NUM_TEST_IMAGES,
-    random_state=42,stratify=trainLabels)
+    random_state=42,stratify=trainLabels )
 trainPaths,testPaths,trainLabels,testLabels=split
 
 print("length of trainpaths 1",len(trainPaths))
