@@ -9,7 +9,7 @@ class MeanPreprocessor:
 
     def preprocess(self,image):
         #split the image into their respective r , g , b
-        (R,G,B) = cv2.split(image.astype("float32"))
+        (B,G,R) = cv2.split(image.astype("float32"))
 
         R -= self.rMean
         B -= self.bMean

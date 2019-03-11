@@ -6,7 +6,7 @@ class CropPreprocessor:
         self.width = width
         self.height=height
         self.horiz=horiz
-        self.horiz=horiz
+        self.inter=inter
 
     def preprocess(self,image):
         #initialize the list of crops
