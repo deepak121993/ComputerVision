@@ -15,7 +15,7 @@ args = vars(ap.parse_args())
 db = h5py.File(args["db"],"r")
 i = int(db["labels"].shape[0]*0.75)
 
-print("length of dataset " ,int(db["labels"])," and ",i)
+print("length of dataset " ,int(db["labels"].shape[0])," and ",i)
 print("[INFO] tuning hyperparameters")
 params = {"C":[0.01,0.1,1.0]}
 model =GridSearchCV(LogisticRegression(),params,cv=2,n_jobs=args["jobs"])
