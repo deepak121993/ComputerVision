@@ -18,7 +18,7 @@ ap.add_argument("-o", "--output", required=True,
     help="path to output models directory")
 ap.add_argument("-b", "--batch_size", default=16,
     help="path to output models directory")
-ap.add_argument("-s", "--buffer_size",default=100,
+ap.add_argument("-s", "--buffer_size",default=1000,
     help="path to output models directory")
 args = vars(ap.parse_args())
 
