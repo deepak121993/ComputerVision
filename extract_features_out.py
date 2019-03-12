@@ -29,7 +29,7 @@ imagePaths = list(paths.list_images(args["dataset"]))
 random.shuffle(imagePaths)
 
 labels = [p.split(os.path.sep).split(".")[0] for p in imagePaths]
-le = LabelEncoder
+le = LabelEncoder()
 labels = le.fit_transform(labels)
 
 print("[INFO] loading Network")

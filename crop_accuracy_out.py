@@ -34,7 +34,7 @@ testGen = HDF5DataGenerator(config.TEST_HDF5,64,preprocessors=[sp,mp,iap],classe
 predictions = model.predict_generator(testGen.generator(),steps=testGen.numImages//64)
 
 (rank1,_) = rank5_accuracy(predictions,testGen.db["labels"])
-print("rank1 accuracy", )rank1
+print("rank1 accuracy", rank1)
 
 testGen.close()
 ##for crop _accuracy
