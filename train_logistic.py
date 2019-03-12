@@ -7,7 +7,7 @@ import h5py
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-d","--db",required=True,help="path to input dataset")
-ap.add_argument("-k","--model",type=int,default=1)
+ap.add_argument("-m","--model",help="model path")
 ap.add_argument("-j","--jobs",type =int,default=1)
 args = vars(ap.parse_args())
 
@@ -15,6 +15,7 @@ args = vars(ap.parse_args())
 db = h5py.File(args["db"],"r")
 i = int(db["labels"].shape[0]*0.75)
 
+print("length of dataset " ,int(db["labels"])," and ",i)
 print("[INFO] tuning hyperparameters")
 params = {"C":[0.01,0.1,1.0]}
 model =GridSearchCV(LogisticRegression(),params,cv=2,n_jobs=args["jobs"])
