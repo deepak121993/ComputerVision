@@ -61,7 +61,7 @@ for i in np.arange(0,len(imagePaths),bs):
     batchImages = np.vstack(batchImages)
     features = model.predict(batchImages,batch_size=bs)
     features = features.reshape((features.shape[0],2048))
-
+    print("here")
     dataset.add(features,batchLabels)
     pbar.update(i)
 dataset.close()
