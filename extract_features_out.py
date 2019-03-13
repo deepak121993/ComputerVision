@@ -53,7 +53,7 @@ for i in np.arange(0,len(imagePaths),bs):
         image = img_to_array(image)
 
         #expand dims 
-        image = np.expand(image,axis=0)
+        image = np.expand_dims(image,axis=0)
         image = imagenet_utils.preprocess_input(image)
 
         batchImages.append(image)
