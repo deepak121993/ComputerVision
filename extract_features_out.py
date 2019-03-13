@@ -27,8 +27,8 @@ bs = args["batch_size"]
 print("[INFO] loading images")
 imagePaths = list(paths.list_images(args["dataset"]))
 random.shuffle(imagePaths)
-print("image paths " ,imagePaths)
-labels = [p.split(os.path.sep).split(".")[0] for p in imagePaths]
+#print("image paths " ,imagePaths)
+labels = [p.split(os.path.sep)[2].split(".")[0] for p in imagePaths]
 le = LabelEncoder()
 labels = le.fit_transform(labels)
 
