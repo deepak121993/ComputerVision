@@ -60,6 +60,7 @@ for i in np.arange(0,len(imagePaths),bs):
     
     batchImages = np.vstack(batchImages)
     features = model.predict(batchImages,batch_size=bs)
+    print("feature shape ",features.shape)
     features = features.reshape((features.shape[0],2048))
     print("here")
     dataset.add(features,batchLabels)
