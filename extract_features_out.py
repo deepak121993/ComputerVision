@@ -41,7 +41,7 @@ dataset = HDF5DatasetWriter((len(imagePaths),2048),args["output"],dataKey="featu
 
 widget = ["building dataset",progressbar.Percentage()," ",progressbar.Bar()]
 pbar = progressbar.ProgressBar(maxval=len(imagePaths),widgets=widget).start()
-print("length of images ",len(imagePaths," batch size ",bs))
+print("length of images ",len(imagePaths)," batch size ",bs))
 for i in np.arange(0,len(imagePaths),bs):
 
     batchPaths = imagePaths[i:i+bs]
