@@ -52,7 +52,7 @@ class DeeperGoogLeNet():
     @staticmethod
     def build(width,height,depth,classes,reg=0.0005):
 
-
+        model = Sequential()
         inputShape = (height,width,depth)
         chanDim=-1
 
