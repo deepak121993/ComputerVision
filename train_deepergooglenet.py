@@ -52,7 +52,7 @@ else:
     k.set_value(model.optimizer.lr,1e-5)
     print("New Lr {}".format(k.get_value(model.optimizer.lr)))
 
-fname=os.path.sep.join([args["weight"],"weight-{epoch:03d}-{val_loss:.4f}.hdf5"])
+fname=os.path.sep.join([args["checkpoints"],"weight-{epoch:03d}-{val_loss:.4f}.hdf5"])
 callbacks=[TrainingMonitor(config.FIG_PATH,jsonPath=config.JSON_PATH,startAt=args["start-epoch"]),\
 ModelCheckpoint(fname,monitor="val_loss",mode="min",save_best_only=True)]
 
