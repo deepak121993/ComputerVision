@@ -38,7 +38,9 @@ for (dtype,paths,labels,outputPath) in datasets:
     widget = ["building dataset",progressbar.Percentage()," ",progressbar.Bar()]
     pbar = progressbar.ProgressBar(maxval=len(paths),widgets=widget).start()
 
-    for (i,(path,label)) in enumerate(zip(  paths,labels)):
+    for (i,(path,label)) in enumerate(zip(paths,labels)):
+        if(dtype="val"):
+            print("path val",path,"  label ",label)
         image = cv2.imread(path)
 
         if(dtype=="train"):

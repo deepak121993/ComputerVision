@@ -15,8 +15,8 @@ NUM_TEST_IMAGES =50*NUM_CLASSES
 #paths of datasets 
 
 TRAIN_HDF5="dataset/tiny-imagenet-200/hdf5/train.hdf5"
-VAL_HDF5 = "dataset/tiny-imagenet-200/hdf5/test.hdf5"
-TEST_HDF5 ="dataset/tiny-imagenet-200/hdf5/val.hdf5"
+VAL_HDF5 = "dataset/tiny-imagenet-200/hdf5/val.hdf5"
+TEST_HDF5 ="dataset/tiny-imagenet-200/hdf5/test.hdf5"
 
 DATASET_MEAN = "deepergooglenet/output/tiny_imagenet_mean.json"
 OUTPUT_PATH  = "deepergooglenet/output"
