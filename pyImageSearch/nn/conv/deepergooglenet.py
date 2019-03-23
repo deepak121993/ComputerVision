@@ -42,7 +42,7 @@ class DeeperGoogLeNet():
                                             chanDim,reg=reg,name=stage+"_third1")
         third = DeeperGoogLeNet.conv_module(third,num5,5,5,(1,1),\
                                             chanDim,reg=reg,name=stage+"_third2")
-        fourth = MaxPooling2D((3,3),strides=(1,1),padding="same",)
+        fourth = MaxPooling2D((3,3),strides=(1,1),padding="same",name=stage+"_pool")(x)
         fourth =  DeeperGoogLeNet.conv_module(fourth,num1_proj,1,1,(1,1),\
                                             chanDim,reg=reg,name=stage+"_fourth")
         x = concatenate([first,second,third,fourth],axis=chanDim,name=stage+"_mixed")
