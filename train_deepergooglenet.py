@@ -14,6 +14,7 @@ from keras.models import load_model
 import keras.backend as k
 import argparse
 import json
+import os
 
 ap =  argparse.ArgumentParser()
 ap.add_argument("-c", "--checkpoints", required=True,
