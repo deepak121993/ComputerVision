@@ -20,7 +20,7 @@ ap.add_argument("-c", "--checkpoints", required=True,
     help="path to output directory")
 ap.add_argument("-m", "--model", type=str,
     help="path to output models directory")
-ap.add_argument("-s", "--start-epoch",type=int,default=0
+ap.add_argument("-s", "--start-epoch",type=int,default=0,
     help="size of batches")
 args = vars(ap.parse_args())
 
