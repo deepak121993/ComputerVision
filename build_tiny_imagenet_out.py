@@ -1,4 +1,4 @@
-from config import tiny_imagenet_config as config
+from deepergooglenet.config import tiny_imagenet_config as config
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from pyImageSearch.io.hdf5datasetwriter import HDF5DatasetWriter
