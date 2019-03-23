@@ -21,7 +21,7 @@ ap.add_argument("-c", "--checkpoints", required=True,
     help="path to output directory")
 ap.add_argument("-m", "--model", type=str,
     help="path to output models directory")
-ap.add_argument("-s", "--start-epoch",type=int,default=0,
+ap.add_argument("-s", "--start_epoch",type=int,default=0,
     help="size of batches")
 args = vars(ap.parse_args())
 
@@ -53,7 +53,7 @@ else:
     print("New Lr {}".format(k.get_value(model.optimizer.lr)))
 
 fname=os.path.sep.join([args["checkpoints"],"weight-{epoch:03d}-{val_loss:.4f}.hdf5"])
-callbacks=[TrainingMonitor(config.FIG_PATH,jsonPath=config.JSON_PATH,startAt=args["start-epoch"]),\
+callbacks=[TrainingMonitor(config.FIG_PATH,jsonPath=config.JSON_PATH,startAt=args["start_epoch"]),\
 ModelCheckpoint(fname,monitor="val_loss",mode="min",save_best_only=True)]
 
 model.fit_generator(trainGen.generator(),steps_per_epoch=trainGen.numImages//64,\
