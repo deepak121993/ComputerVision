@@ -27,7 +27,7 @@ args = vars(ap.parse_args())
 aug = ImageDataGenerator(rotation_range=30,width_shift_range=0.1,height_shift_range=0.1,\
             shear_range=0.15,horizontal_flip=True,fill_mode="nearest")
 
-means = json.load(open(config.DATASET_MEAN).read())
+means = json.loads(open(config.DATASET_MEAN).read())
 
 sp = SimplePreprocessor(64,64)
 mp = MeanPreprocessor(means["R"],means["G"],means["B"])
