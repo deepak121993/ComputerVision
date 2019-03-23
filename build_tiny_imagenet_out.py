@@ -13,7 +13,7 @@ import os
 
 trainPaths = list(paths.list_images(config.TRAIN_IMAGES))
 trainLabels = [p.split(os.path.sep)[-3] for p in trainPaths]
-le =    ()
+le = LabelEncoder()
 
 trainLabels = le.fit_transform(trainLabels)
 split = train_test_split(trainPaths,trainLabels,test_size=config.NUM_TEST_IMAGES,stratify=trainLabels,\
