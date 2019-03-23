@@ -39,7 +39,7 @@ for (dtype,paths,labels,outputPath) in datasets:
     pbar = progressbar.ProgressBar(maxval=len(paths),widgets=widget).start()
 
     for (i,(path,label)) in enumerate(zip(paths,labels)):
-        if(dtype="val"):
+        if(dtype=="val"):
             print("path val",path,"  label ",label)
         image = cv2.imread(path)
 
