@@ -52,7 +52,7 @@ class DeeperGoogLeNet():
     @staticmethod
     def build(width,height,depth,classes,reg=0.0005):
 
-        model = Sequential()
+        
         inputShape = (height,width,depth)
         chanDim=-1
 
@@ -73,7 +73,7 @@ class DeeperGoogLeNet():
         x= DeeperGoogLeNet.inception_module(x,128,128,256,24,64,64,chanDim,"4c",reg=reg)
         x= DeeperGoogLeNet.inception_module(x,112,144,288,32,64,64,chanDim,"4d",reg=reg)
         x= DeeperGoogLeNet.inception_module(x,256,160,320,32,128,128,chanDim,"4e",reg=reg)
-        x= MaxPooling2D((3,3),strides=(2,2),padding="same",name="pool3")(x)
+        x= MaxPooling2D((3,3),strides=(2,2),padding="same",name="pool4")(x)
 
         x= AveragePooling2D((4,4),name="pool5")(x)
         x=Dropout(0.4,name="do")(x)
