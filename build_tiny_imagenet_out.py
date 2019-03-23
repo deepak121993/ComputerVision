@@ -23,7 +23,7 @@ split = train_test_split(trainPaths,trainLabels,test_size=config.NUM_TEST_IMAGES
 M = open(config.VAL_MAPPING).read().strip().split("\n")
 M = [r.split("\t")[:2] for r in M]
 
-valPaths = [os.path.join([config.VAL_IMAGES,m[0]]) for m in M]
+valPaths = [os.path.sep.join([config.VAL_IMAGES,m[0]]) for m in M]
 valLabels = le.transform([m[1] for m in M])
 
 datasets = [("train",trainPaths,trainLabels,config.TRAIN_HDF5),("val",valPaths,valLabels,config.VAL_HDF5),\
@@ -39,8 +39,7 @@ for (dtype,paths,labels,outputPath) in datasets:
     pbar = progressbar.ProgressBar(maxval=len(paths),widgets=widget).start()
 
     for (i,(path,label)) in enumerate(zip(paths,labels)):
-        if(dtype=="val"):
-            print("path val",path,"  label ",label)
+        
         image = cv2.imread(path)
 
         if(dtype=="train"):
