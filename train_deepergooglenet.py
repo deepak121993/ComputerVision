@@ -56,8 +56,8 @@ callbacks=[TrainingMonitor(config.FIG_PATH,jsonPath=config.JSON_PATH,startAt=arg
 ModelCheckpoint(fname,monitor="val_loss",mode="min",save_best_only=True)]
 
 model.fit_generator(trainGen.generator(),steps_per_epoch=trainGen.numImages//64,\
-validation_data=valGen.generator(),validation_steps=valGen.numImages // 64,epochs=5,max_queue_size=64*2\
-callback=callbacks,verbose=1)
+validation_data=valGen.generator(),validation_steps=valGen.numImages // 64,epochs=10,max_queue_size=64*2\
+callbacks=callbacks,verbose=1)
 
 trainGen.close()
 valGen.close()
