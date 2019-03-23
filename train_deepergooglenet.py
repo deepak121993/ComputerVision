@@ -18,11 +18,10 @@ import json
 ap =  argparse.ArgumentParser()
 ap.add_argument("-c", "--checkpoints", required=True,
     help="path to output directory")
-ap.add_argument("-m", "--model", required=True,
+ap.add_argument("-m", "--model", type=str,
     help="path to output models directory")
-ap.add_argument("-s", "--start-epoch",type=int,default=5,
+ap.add_argument("-s", "--start-epoch",type=int,default=0
     help="size of batches")
-ap.add_argument("-w","--weight",required=True,help="path to weight directory")
 args = vars(ap.parse_args())
 
 aug = ImageDataGenerator(rotation_range=30,width_shift_range=0.1,height_shift_range=0.1,\
