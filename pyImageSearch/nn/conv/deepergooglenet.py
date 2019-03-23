@@ -57,7 +57,7 @@ class DeeperGoogLeNet():
         chanDim=-1
 
         input = Input(shape=inputShape)
-        x= DeeperGoogLeNet.conv_module(inputShape,64,5,5,(1,1),chanDim,reg=reg,name="block1")
+        x= DeeperGoogLeNet.conv_module(input,64,5,5,(1,1),chanDim,reg=reg,name="block1")
         x= MaxPooling2D((3,3),strides=(2,2),padding="same",name="pool")(x)
         x= DeeperGoogLeNet.conv_module(x,64,1,1,(1,1),chanDim,reg=reg,name="block2")
         x= DeeperGoogLeNet.conv_module(x,192,3,3,(1,1),chanDim,reg=reg,name="block3")
