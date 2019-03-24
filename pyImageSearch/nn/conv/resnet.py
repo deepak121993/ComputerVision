@@ -27,7 +27,7 @@ class ResNet:
         #second block of resnet modules are of 3x3 conv
         bn2 = BatchNormalization(axis=chanDim,epsilon=bnEps,momentum=bnMom)(conv1)
         act2 = Activation("relu")(bn2)
-        conv2 =  Conv2D(int(K*0.25),(3,3),use_bias=False,kernel_regularizer=l2(reg),strides=stride)(act2)
+        conv2 =  Conv2D(int(K*0.25),(3,3),use_bias=False,padding="same",kernel_regularizer=l2(reg),strides=stride)(act2)
 
         #final bottleneck  another 1x1 filters
         bn3 = BatchNormalization(axis=chanDim,epsilon=bnEps,momentum=bnMom)(conv2)
