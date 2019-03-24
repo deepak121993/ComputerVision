@@ -54,11 +54,11 @@ class ResNet:
         
         for i in range(0,len(stages)):
 
-            stride = (1,1) if i==0 else (2,2)
+            stride = (1,1) if(i==0) else (2,2)
             x= ResNet.residual_module(x,filters[i+1],stride,chanDim,red=True,bnEps,bnMom)
 
             for j in range(0,stages[i]-1):
-                x = ResNet.residual_module(x,filters[i+1],(1,1),chanDim,red=True,bnEps,bnMom)
+                x = ResNet.residual_module(x,filters[i+1],(1,1),chanDim,red=True,reg=reg,bnEps,bnMom)
 
 
         x= BatchNormalization(axis=chanDim,epsilon=bnEps,momentum=bnEps)(x)
