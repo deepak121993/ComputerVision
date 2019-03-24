@@ -32,9 +32,10 @@ class ResNet:
         #final bottleneck  another 1x1 filters
         bn3 = BatchNormalization(axis=chanDim,epsilon=bnEps,momentum=bnMom)(conv2)
         act3 = Activation("relu")(bn3)
-        conv3 =  Conv2D(int(K*0.25),(3,3),use_bias=False,kernel_regularizer=l2(reg))(act3)
+        conv3 =  Conv2D(K,(1,1),use_bias=False,kernel_regularizer=l2(reg))(act3)
 
         if red:
+            print("here")
             shortcut = Conv2D(K,(1,1),strides=stride,use_bias=False,kernel_regularizer=l2(reg))(act1)
 
         x = add([conv3+shortcut])
