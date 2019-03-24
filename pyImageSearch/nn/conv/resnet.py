@@ -35,7 +35,7 @@ class ResNet:
         conv3 =  Conv2D(K,(1,1),use_bias=False,kernel_regularizer=l2(reg))(act3)
 
         if red:
-            print("here")
+            
             shortcut = Conv2D(K,(1,1),strides=stride,use_bias=False,kernel_regularizer=l2(reg))(act1)
 
         x = add([conv3,shortcut])

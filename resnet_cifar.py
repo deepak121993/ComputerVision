@@ -56,7 +56,7 @@ else:
     print("New Lr {}".format(k.get_value(model.optimizer.lr)))
 
 fname=os.path.sep.join([args["checkpoints"],"weight-{epoch:03d}-{val_loss:.4f}.hdf5"])
-callbacks=[TrainingMonitor(config.FIG_PATH,jsonPath=config.JSON_PATH,startAt=args["start_epoch"]),\
+callbacks=[TrainingMonitor("output/resnet_cifar10.png",jsonPath="output/resnet_cifar10.json",startAt=args["start_epoch"]),\
 ModelCheckpoint(fname,monitor="val_loss",mode="min",save_best_only=True)]
 
 model.fit_generator(aug.flow(trainX,trainY,batch_size=128),validation_data=(testX,testY),\
