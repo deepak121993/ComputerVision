@@ -9,7 +9,7 @@ from keras.optimizers import RMSprop,SGD
 from keras.callbacks import LearningRateScheduler
 from keras.datasets import cifar10
 from keras.models import load_model
-from keras.backend as k
+from keras import backend as k
 import argparse
 import os
 import numpy as np

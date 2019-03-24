@@ -9,7 +9,7 @@ from keras.layers.core import Dense
 from keras.layers import Input,add
 from keras.models import Model
 from keras.layers import concatenate 
-from keras import backend as K
+
 from keras.regularizers import  l2
 
 class ResNet:
