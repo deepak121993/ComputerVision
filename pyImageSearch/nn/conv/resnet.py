@@ -38,7 +38,7 @@ class ResNet:
             print("here")
             shortcut = Conv2D(K,(1,1),strides=stride,use_bias=False,kernel_regularizer=l2(reg))(act1)
 
-        x = add([conv3+shortcut])
+        x = add([conv3,shortcut])
         return x
     
     @staticmethod 
