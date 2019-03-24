@@ -50,7 +50,7 @@ class ResNet:
 
         #check if the dataset is cifar
         if(dataset=="cifar"):
-            x = Conv2D(filters[0],(3,3),use_bias=False,padding="same",kernel_regularizer=l2(reg))
+            x = Conv2D(filters[0],(3,3),use_bias=False,padding="same",kernel_regularizer=l2(reg))(x)
         
         for i in range(0,len(stages)):
 
