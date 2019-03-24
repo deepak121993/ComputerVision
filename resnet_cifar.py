@@ -25,6 +25,8 @@ args = vars(ap.parse_args())
 print("[INFO] loading CIFAR-10 data...")
 
 ((trainX, trainY), (testX, testY)) = cifar10.load_data()
+trainX = trainX.astype("float")
+testX = testX.astype("float")
 
 mean = np.mean(trainX,axis=0)
 trainX -= mean
